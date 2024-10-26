@@ -1,0 +1,135 @@
+<!doctype html> 
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2024 Calc Project</title>
+        <link rel="stylesheet" href="stylesheets/Basic Style.css">
+
+    </head>
+    <body> 
+
+        <Div>       
+            <nav class="navbar">
+                <h1 id="MainHeading">A Comprehensive Analysis of The Construction of a Road Between The Bridge And The Intersection</h1>
+                
+                <ul class="nav-links">
+                    <li><a href="#Introduction">Introduction</a></li>
+                    <li><a href="#Graphs">Graphs</a></li>
+                     <li><a href="#Calculations">Calculations</a></li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropbtn" id="dropdownToggle">Scenarios</a>
+                        <ul class="dropdown-content" id="dropdownMenu">
+                            <li><a id="Scenario1">Scenario 1</a></li>
+                            <li><a id="Scenario2">Scenario 2</a></li>
+                            <li><a id="Scenario3">Scenario 3</a></li>
+                        </ul>
+                    </li>
+                    
+
+                    
+                </ul>
+
+        </Div>
+      
+        <section id="Introduction"> 
+            
+            <div class="box">
+                <br>
+                <h1>Introduction</h1>
+                <br>
+                <p>
+                    In this project I will provide 3 reasonable solutions to the problem that is building a highway between a bridge and an itersection that is 8 miles south and 8 miles east.<br>
+                    These solutions selectable in the top right corner will be shown in the form of a computer generated moddel and graphs representing the road cost and lenght.<br> <br>
+                    As well as this I have programed a mathmatical model capible of finding any posible combination of 2 roads and their cost to build if none of the existing solutions are wanted <br>
+                    A detailed explanation of the math required to solve for cost and lenght of road
+
+                </p>
+                <!--The first solution is  the most cost effective solution to the road contruction. This cost savings leads to a more complex geometry that may take more time to construct <br> <br>
+                    The second solution is likely the simplest, shortest solution and likeley the quickest to build as it is perfectly strate. However this simplisity comes at extra cost due to the extra distance spent in marshland. <br> <br>
+                    The third solution is one with the least distance spent in the marsh land possible while still maintining the lowest possible cost. This solution may be preferable if marshland is a protected habitat or if it is prone to flooding <br> -->
+                <div style="padding-bottom: 10%;"></div>
+            </div>
+        
+
+        <div class="ModelSpace">
+            
+            <div class="horizontalrow1">
+                
+                <div id="landL"></div>
+                <div id="bridge"></div>
+                <div id="landR"></div>
+
+            </div>
+            <div class="horizontalrow2">
+                
+                <div id="bankL"></div>
+                <div id="bridge"></div>
+                <div id="bankR"></div>
+
+            </div>
+            <div class="horizontalrow3">
+                
+                <div id="riverL"></div>
+                <div id="bridge"></div>
+                <div id="riverR"></div>
+
+            </div>
+            <div class="horizontalrow2">
+                
+                <div id="bankL"></div>
+                <div id="bridge"></div>
+                <div id="bankR"></div>
+
+            </div>
+
+            <div id="swamp"></div>
+            <div id="landS"></div>
+
+            <div class="horizontalrow1">
+                
+                <div id="landSR"></div>
+                <div id="bridge"></div>
+                <div id="landSL"></div>
+
+            </div>
+            <canvas id="Model" >
+                
+                
+            </canvas>
+
+
+        </div>
+        </section>
+    
+        <section id="Graphs">
+        <h1 class="Separation">Graphs</h1>
+        <div class="box2">
+            <div class="Graph">
+                <h3>Cost to build</h3>
+                <canvas id="costgraph" class="Graphcanvas"></canvas>
+                <p> </p>
+            </div>
+            <div class="Graph">
+                <h3>Length of Road</h3>
+                <canvas id="lengthgraph" class="Graphcanvas"></canvas>
+                <p> </p>
+                
+            </div>
+        </div>   
+        </section>
+
+        <section id="Calculations">
+            <h1 class="Separation">Calculations</h1>
+            <div>
+                
+            <p>This is the contact section.</p>
+
+            </div>
+        </section>
+
+        <script src="JS source\Main.js"></script>
+    </body>
+</html>

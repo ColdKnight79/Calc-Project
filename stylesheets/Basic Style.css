@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  
+    background-color: rgb(19, 19, 19);
+}
+
+
+.navbar {
+    background-color: #dd6017;
+    padding: 10px;
+    position: fixed;
+    top: 0; 
+    width: 100%;  
+    z-index: 1000; 
+    padding-top:  10px;
+    display: flex;
+
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+canvas {
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+
+
+#MainHeading {
+    font-size: 25px;
+    color: #000000;
+    padding-right: 10%;
+    
+}
+
+.nav-links {
+
+    list-style-type: none;
+    display: flex;
+    justify-content: right; /* Distribute items evenly */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.nav-links li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+
+.dropdown-content li a {
+    padding: 10px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background-color: #575757;
+}
+
+/* Show the drop-down menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown {
+    position: relative;
+}
+
+/* Drop-Down Menu */
+.dropdown-content {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Position it directly below the parent */
+    left: 0;   /* Align with the left of the parent */
+}
+p {
+
+    text-align: left;
+    margin: 2%;
+}
+
+#Introduction  {
+
+    display: flex;
+    justify-content: left;
+}
+
+.box {
+    background-color: rgb(46, 46, 46);
+    color: #ffffff;
+    width: 35%;
+    font-size: 25px;
+    padding-top: 3%;
+    height: 1000px;
+    
+}
+
+.ModelSpace {
+    
+    top: 0;
+    width: 65%;
+    margin: 2%;
+    margin-top: 7%;
+    background-color: rgba(34, 139, 34, 0);
+    position: relative;
+
+}
+
+.horizontalrow1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 5%;
+
+}
+
+#landL {
+    background-color: green;
+    width: 5%;
+    
+}
+
+#landR {
+    background-color: green;
+    width: 91%;
+
+}
+
+.horizontalrow2 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 1.4%;
+
+}
+
+#bankL {
+    background-color: sandybrown;
+    width: 5%;
+    
+}
+
+#bankR {
+    background-color: sandybrown;
+    width: 91%;
+    
+}
+
+.horizontalrow3 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 10%;
+
+}
+
+#riverL {
+    background-color: blue;
+    width: 5%;
+    
+}
+
+#riverR {
+    background-color: blue;
+    width: 91%;
+    
+}
+
+#bridge {
+    background-color: rgba(90, 90, 90, 1);
+    width: 4%;
+    
+}
+
+#swamp {
+    background-color: rgb(44, 23, 6);
+    width: 100%;
+    height: 47%;
+    
+}
+
+#landS {
+    background-color: green;
+    height: 31%;
+    
+}
+
+#landSR {
+    background-color: green;
+    width: 79%;
+    
+}
+
+#landSL {
+    background-color: green;
+    width: 17%;
+
+}
+
+
+
+#Model {
+    display: flex;
+    bottom: none;
+    position: absolute;
+    margin-top: 0%;
+    width: 78%;
+    height: 78%;
+    top: 18%;
+    left: 5%;
+    z-index: 1;         
+    pointer-events: none; 
+
+}
+
+.Separation {
+    height: 80px;
+    background-color: rgb(9, 9, 20);
+    font-size: 65px;
+    text-align: center;
+    color: #FFF;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.box2 {
+    background-color: rgb(46, 46, 46);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 35px;
+    height: 800px;
+    text-align: center;
+    
+}
+
+.Graph {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    
+    
+}
+
+.Graphcanvas {
+    width: 100%;
+    height: 600px;
+    background-color: #cecece;
+}
