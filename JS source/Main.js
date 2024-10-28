@@ -215,7 +215,7 @@ function Diagram(triangleBase,triangleHeight){
     ctx.fillStyle = "orange"
     ctx.fillText("Y:" + triangleHeight, 80, triangleHeight * 133.3 / 2)
     if (triangleHeight != 8){
-        ctx.fillText("X:" + triangleHeight, triangleBase * 133.3 / 2, triangleHeight * 133.3 + 45)
+        ctx.fillText("X:" + (triangleBase - 1), triangleBase * 133.3 / 2, triangleHeight * 133.3 + 45)
         ctx.fillText(`sqrt( ${triangleHeight ** 2 + (triangleBase - 1) ** 2} )`,triangleBase * 133.3 / 2 + 80,triangleHeight * 133.3 / 2)
     }
     ctx.stroke()
