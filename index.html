@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>2024 Calc Project</title>
         <link rel="stylesheet" href="stylesheets/Basic Style.css">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     </head>
     <body> 
@@ -16,9 +17,9 @@
                 
                 <ul class="nav-links">
                     <li><a href="#Introduction">Introduction</a></li>
-                    <li><a href="#Graphs">Graphs</a></li>
+                    <li><a href="#DiagramSpace">Mathematical Diagram</a</li>
                      <li><a href="#Calculations">Calculations</a></li>
-
+                    <li><a href="#Graphs">Graphs</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropbtn" id="dropdownToggle">Scenarios</a>
                         <ul class="dropdown-content" id="dropdownMenu">
@@ -42,14 +43,19 @@
                 <h1>Introduction</h1>
                 <br>
                 <p>
-                    In this project I will provide 3 reasonable solutions to the problem that is building a highway between a bridge and an itersection that is 8 miles south and 8 miles east.<br>
-                    These solutions selectable in the top right corner will be shown in the form of a computer generated moddel and graphs representing the road cost and lenght.<br> <br>
-                    As well as this I have programed a mathmatical model capible of finding any posible combination of 2 roads and their cost to build if none of the existing solutions are wanted <br>
-                    A detailed explanation of the math required to solve for cost and lenght of road
+                    In this project I will provide 3 reasonable solutions to the problem that is building a highway between a bridge and an intersection that is 8 miles south and 8 miles east.<br>
+                    These solutions are selectable in the top right corner. <br> 
+                    The first solution is  the most cost effective solution to the road contruction. This cost savings leads to a more complex geometry that may take more time to construct <br> <br>
+                    The second solution is likely the simplest, shortest solution and likeley the quickest to build as it is perfectly straight. However this simplisity comes at extra cost due to the extra distance spent in marshland. <br> <br>
+                    The third solution is one with the least distance spent in the marsh land possible. This solution may be preferable if there are enviromental or structural complications due to the marshland<br>
+                    As well as the 3 perixisting solutions I have programed a mathmatical model capible of finding any posible combination of 2 roads and their cost to build in case none of the provided solutions are fitting <br>
+                    i will then provid my personal oppinion on which solution is the best and some reasons why.
+                    
 
                 </p>
+                <h1 style="color: red;">Select a Scenario or Things break</h1>
                 <!--The first solution is  the most cost effective solution to the road contruction. This cost savings leads to a more complex geometry that may take more time to construct <br> <br>
-                    The second solution is likely the simplest, shortest solution and likeley the quickest to build as it is perfectly strate. However this simplisity comes at extra cost due to the extra distance spent in marshland. <br> <br>
+                    The second solution is likely the simplest, shortest solution and likeley the quickest to build as it is perfectly straight. However this simplisity comes at extra cost due to the extra distance spent in marshland. <br> <br>
                     The third solution is one with the least distance spent in the marsh land possible while still maintining the lowest possible cost. This solution may be preferable if marshland is a protected habitat or if it is prone to flooding <br> -->
                 <div style="padding-bottom: 10%;"></div>
             </div>
@@ -104,6 +110,71 @@
 
         </div>
         </section>
+        
+        <section id="Calculations">
+            <h1 class="Separation">Calculations</h1>
+            <div class="box3">
+                <div class="Calcleft">
+                    <h1>Creating an equation</h1>
+                    <p>The first thing needed to do any work is to find the equation the represents the situation. in this project i will be representing the road as 2 triangles.
+                        Since im working in an 8x8 area i can say that the side x of one of the triangles plus the side y of the other is equal to 8. 
+                        I also know that the vertical side of the top triangle is the length of the marshland and the vertical side of the bottom triangle is the size of the land.
+                        from there you rearange the x + y = 8 base of the triangle to be y = 8-x. that is the new base of the second triangle and you end up with the triangles bellow.
+                    </p>
+                    <canvas id="Diagram2"></canvas>
+                </div>
+                <div class="CalcMid">
+                    <h1>Finding The Final Equation</h1>
+                    <p>Now that i have the sides of the triangle using pythagorean theorem it is possible to create an equasion for the cost of the road. this is done by rearanging \( a^2 + b^2 = c^2 \) into \( c = \sqrt{a^2 + b^2}  \). from there i can sub in the triangles and get y = \(\sqrt{5^2 + X^2} + \sqrt{3^2 + (8 - X)^2}\)
+                        finaly i need to multiply the equations for the hypotenuse of each triangle by their respective cost to build. That creates the final equation of y = \(10 * \sqrt{5^2 + X^2} + 7 * \sqrt{3^2 + (8 - X)^2}\)
+                    </p>
+                    <h1>Finding The Minimum Cost</h1>
+                    <p>From this point the only way to find the minimum value is to find the 0 of the first dirivative
+                        the first step in deriving this equation is using the chain rule on the \(10 * \sqrt{5^2 + X^2} \) so that I can power rule the square root and \(X^2\) to create \( \frac{10X}{\sqrt{25 + X^2}} \)
+                        I then do the same thing with the \(7 * \sqrt{3^2 + (8 - X)^2}\) to create \( \frac{-7(8 - X)}{\sqrt{9 + (8 - X)^2}} \), these are then put back togethe to make \( y' = \frac{10X}{\sqrt{25 + X^2}} + \frac{-7(8 - X)}{\sqrt{9 + (8 - X)^2}} \). 
+                        That dirivative is not able to be simplifed so the only way to find the minimum is to graphicaly find the 0 of y'. The graph of the dirivative shown on the right shows that the minimum cost will occur at X = 3.56005.
+                        From this point the math to find cost and lenght of road is found in the graphs section.
+                
+                    </p>
+                    
+                </div>
+                <div class="Calcright">
+                    <img src="Images/graph.png" alt="Description of image" width="600" height="500">
+                    
+                </div>
+
+            </div>
+        </section>
+
+        <section id="DiagramSpace">
+            <h1 class="Separation">Mathematical Diagram</h1>
+            
+                <div class="box3">
+                    <div class="textbox1">
+                        <h2>Explanation</h2>
+                        <p> The first major thing showm by the model to the right is the height of each triangle in miles on the left side of each triangle in their respective color.<br>
+                            The Second major thing shown by the afformentioned model is the width of each triangle in miles bellow each triangle. <br>
+                            Using the pythagorean theorem shown to the right (1) you can find the the hypotenuse of each traingle using their respective side lengths.
+                            The hypotenuse of each triangle represents the road itself and is exremely important for calculating both the cost of road contruction and the potential time it would take to construct the roads. The hypotenuse of each triangle is shown above the triangle in its respective color.
+                            A more in depth explanation of Calculations Can be found below in the graphs section. <br>
+                            Finaly there is the angle between the roads both above and below the curve that may be required for road construction. The calculations aswell as an explanation for this are shown on the right (2)
+                        </p>
+                    </div>
+                    <canvas id="Diagram"></canvas>
+                    <div class="textbox1">
+                        <h2>Math</h2>
+                        <h4>(1)</h4>
+                        <p id="pythag">
+                            
+                        </p>
+                        <h4>(2)</h4>
+                        <p id="angles">
+
+                        </p>
+                    </div>
+                </div>
+
+            </section>
     
         <section id="Graphs">
         <h1 class="Separation">Graphs</h1>
@@ -111,33 +182,38 @@
             <div class="Graph">
                 <h3>Cost to build</h3>
                 <canvas id="costgraph" class="Graphcanvas"></canvas>
-                <p> </p>
+                <p id="equation1">
+                </p>
             </div>
             <div class="Graph">
                 <h3>Length of Road</h3>
                 <canvas id="lengthgraph" class="Graphcanvas"></canvas>
-                <p> </p>
+                <p id="equation2">  </p>
                 
             </div>
         </div>   
         </section>
 
-        <section id="Calculations">
-            <h1 class="Separation">Calculations</h1>
-            <div>
-                
-            <p>This is the contact section.</p>
+        <section id="Conclusion">
+            
+            <h1 class="Separation"> Conclusion</h1>
+                <div class="box4">
+                    <p>In Conclusion The 3 possible Scenarios provide their own angles both literaly and figuratively. The cheapest Solution is extremely enticing being 0.19 miles longer than the shortest possible solution while being 1.5 million dollars cheaper. That said the shortest solution also comes with the benefit of no turn in the shorter road. That lack of turn coupled with the shorter road might help to speed up trafic, reduce maintence cost and speed up construction.  Option 3  is a bit of a wild card that provides an interesting situation where the road is run straight down to exit the marsh in as short as possible time. Marsh land is often soft and unstable and building a long road on it might open up excessive maintenance costs. For the extra 28 million to build option 3 it might be worth it if the saving in maintenence cost if this is a high trafic highway that will be worn out very quickly. 
+                        With the currently known information I would sujest the city goes with the first Scenario since it is the cheapest and the extra length is insignificant to the time spend drivng down the road at highway speed.  </p>
+                </div>
+            </section>
 
-            </div>
-        </section>
-        <div id="sliders">
-        <h1>Adjust Intersection Location:</h1>
-            <p>X: <span id="X-display">50</span></p>
-            <input type="range" id="X-Var" min="0" max="100" value="50">
-            <p>Y: <span id="Y-display">50</span></p>
-            <input type="range" id="Y-Var" min="0" max="100" value="50">
-        </div>
+
         
+        <div class="Sliderbox">
+            <div id="sliders">
+                <h1>Adjust Intersection Location:</h1>
+                <p>X: <span id="X-display">4</span></p>
+                <input type="range" id="X-Var" min="0" max="8" value="4" step="0.1">
+                <p>Y: <span id="Y-display">5</span></p>
+                <input type="range" id="Y-Var" min="0" max="8" value="5"step="0.1">
+            </div>
+        </div>
        
 
         <script src="JS source\Main.js"></script>
